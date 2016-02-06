@@ -4,3 +4,9 @@
   <strong>Title:</strong>
   <%= @registry.title %>
 </p>
+
+<% if current_user.registry == @registry %>
+  <%= form_for Gift.new(registry: @registry) do |f| %>
+    <%= f.url_field :url %>
+  <% end %>
+<% end %>

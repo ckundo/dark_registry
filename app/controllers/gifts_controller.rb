@@ -12,15 +12,10 @@ class GiftsController < ApplicationController
     @gift = Gift.new(gift_params)
 
     if @gift.save
-      redirect_to @gift, notice: 'Gift was successfully created.'
+      redirect_to registries_path(@gift.registry), notice: 'Gift was successfully created.'
     else
-      render :new
+      redirect_to registries_path(@gift.registry), error: 'Could not save gift'
     end
-  end
-
-  def destroy
-    @gift.destroy
-    redirect_to gifts_url, notice: 'Gift was successfully destroyed.'
   end
 
   private
