@@ -55,6 +55,11 @@ GEM
     byebug (8.2.2)
     coderay (1.1.0)
     concurrent-ruby (1.0.0)
+    delayed_job (4.1.1)
+      activesupport (>= 3.0, < 5.0)
+    delayed_job_active_record (4.1.0)
+      activerecord (>= 3.0, < 5)
+      delayed_job (>= 3.0, < 5)
     devise (3.5.6)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -153,9 +158,11 @@ PLATFORMS
 DEPENDENCIES
   bitters
   bourbon!
+  delayed_job_active_record
   devise
   jquery-rails
   neat
+  nokogiri
   pg (~> 0.15)
   pry-byebug
   rails
