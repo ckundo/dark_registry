@@ -9,7 +9,11 @@ class RegistriesController < ApplicationController
   end
 
   def new
-    @registry = current_user.build_registry
+    if current_user.registry.nil?
+      @registry = current_user.build_registry
+    else
+      redirect_to registry_path(current_user.registry)
+    end
   end
 
   def edit
@@ -41,7 +45,7 @@ class RegistriesController < ApplicationController
   private
 
   def set_registry
-    @registry = current_user.registry
+    @registry = Registry.find(params[:id])
   end
 
   def registry_params
