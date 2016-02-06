@@ -4,6 +4,7 @@
 
 <% @registry.gifts.each do |gift| %>
   <p><%= gift.url %></p>
+  <p><%= gift.description %></p>
 <% end %>
 
 <% if current_user.registry == @registry %>
