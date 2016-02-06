@@ -14,6 +14,4 @@ class Gift < ActiveRecord::Base
       description: doc.css("#info > h3")
     )
   end
-
-  handle_asynchronously :fetch_description
 end
