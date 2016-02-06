@@ -7,8 +7,8 @@
 <% end %>
 
 <% if current_user.registry == @registry %>
-  <%= simple_form_for @registry do |f| %>
-      <%= f.simple_fields_for :gifts, @gift do |gifts_form| %>
+  <%= form_for @registry do |f| %>
+      <%= f.fields_for :gifts, @gift do |gifts_form| %>
         <%= gifts_form.label :url %>
         <%= gifts_form.url_field :url %>
       <% end %>
