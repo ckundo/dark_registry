@@ -1,12 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @registry.title %>
-</p>
+<h1><%= @registry.title %></h1>
+
+<% @registry.gifts.each do |gift| %>
+  <p><%= gift.url %></p>
+<% end %>
 
 <% if current_user.registry == @registry %>
-  <%= form_for Gift.new(registry: @registry) do |f| %>
-    <%= f.url_field :url %>
+  <%= simple_form_for @registry do |f| %>
+      <%= f.simple_fields_for :gifts, @gift do |gifts_form| %>
+        <%= gifts_form.label :url %>
+        <%= gifts_form.url_field :url %>
+      <% end %>
+    <%= f.submit %>
   <% end %>
 <% end %>

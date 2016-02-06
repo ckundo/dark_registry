@@ -12,9 +12,9 @@ class GiftsController < ApplicationController
     @gift = Gift.new(gift_params)
 
     if @gift.save
-      redirect_to registries_path(@gift.registry), notice: 'Gift was successfully created.'
+      redirect_to registry_path(@gift.registry), notice: 'Gift was successfully created.'
     else
-      redirect_to registries_path(@gift.registry), error: 'Could not save gift'
+      redirect_to registry_path(@gift.registry), error: 'Could not save gift'
     end
   end
 

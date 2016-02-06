@@ -6,6 +6,7 @@ class RegistriesController < ApplicationController
   end
 
   def show
+    @gift = @registry.gifts.build
   end
 
   def new
@@ -49,6 +50,6 @@ class RegistriesController < ApplicationController
   end
 
   def registry_params
-    params.require(:registry).permit(:title)
+    params.require(:registry).permit(:title, gifts_attributes: [:url])
   end
 end
