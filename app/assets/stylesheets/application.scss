@@ -1,3 +1,13 @@
 @import "bourbon";
 @import "base/base";
 @import "neat";
+
+.container {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.bg-full-bleed {
+  background-image: url(asset-url("ring.jpg"));
+  background-repeat: no-repeat;
+}

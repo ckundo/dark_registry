@@ -1,5 +1,9 @@
-<% @registries.each do |registry| %>
-  <%= link_to registry.title, registry_path(registry) %>
-<% end %>
+<ul>
+  <% @registries.each do |registry| %>
+    <li>
+    <%= link_to registry.title, registry_path(registry) %>
+    </li>
+  <% end %>
+</ul>
 
-<%= link_to "Create a registry", new_registry_path %>
+<%= link_to "+ Create a registry", new_registry_path %>

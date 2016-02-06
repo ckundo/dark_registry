@@ -4,7 +4,7 @@ gem "bitters"
 gem "bourbon", github: "thoughtbot/bourbon", tag: "v4.2.6"
 gem "delayed_job_active_record"
 gem "neat"
-gem "devise"
+gem "clearance"
 gem "jquery-rails"
 gem "nokogiri"
 gem "pg", "~> 0.15"
@@ -14,4 +14,5 @@ gem "sqlite3"
 
 group :development, :test do
   gem "pry-byebug"
+  gem "refills"
 end

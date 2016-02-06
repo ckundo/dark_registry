@@ -2,17 +2,21 @@
 
 <h1><%= @registry.title %></h1>
 
-<% @registry.gifts.each do |gift| %>
-  <p><%= gift.url %></p>
-  <p><%= gift.description %></p>
-<% end %>
+<ol>
+  <% @registry.gifts.each do |gift| %>
+    <li>
+      <p><%= gift.url %></p>
+      <p><%= gift.description %></p>
+    </li>
+  <% end %>
+</ol>
 
 <% if current_user.registry == @registry %>
   <%= form_for @registry do |f| %>
       <%= f.fields_for :gifts, @gift do |gifts_form| %>
-        <%= gifts_form.label :url %>
+        <%= gifts_form.label :url, "Crypto Market Url" %>
         <%= gifts_form.url_field :url %>
       <% end %>
-    <%= f.submit %>
+    <%= f.submit "Add to registry" %>
   <% end %>
 <% end %>

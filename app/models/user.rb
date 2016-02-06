@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  include Clearance::User
+
   has_one :registry
   has_many :gifts, through: :registry
 
