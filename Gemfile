@@ -8,6 +8,7 @@ gem "jquery-rails"
 gem "pg", "~> 0.15"
 gem "rails"
 gem "sass-rails"
+gem "sqlite3"
 
 group :development, :test do
   gem "pry-byebug"
