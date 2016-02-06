@@ -22,6 +22,6 @@ test:
 
 production:
   <<: *default
-  database: ENV.fetch("PG_DATABASE")
-  username: ENV.fetch("PG_USER")
-  password: ENV.fetch("PG_PASS")
+  database: <%= ENV["PG_DATABASE"]%>
+  username: <%= ENV["PG_USER"] %>
+  password: <%= ENV["PG_PASS"] %>
