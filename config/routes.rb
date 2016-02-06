@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resource :registry
+  resources :registries
 
-  root to: "registries#show"
+  root to: "registries#index"
 end

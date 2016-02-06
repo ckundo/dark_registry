@@ -1,10 +1,11 @@
 class RegistriesController < ApplicationController
   before_action :set_registry, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @registries = Registry.all
+  end
+
   def show
-    if @registry.nil?
-      redirect_to new_registry_path
-    end
   end
 
   def new
