@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem "devise"
 gem "jquery-rails"
-gem "pg"
+gem "pg", "~> 0.15"
 gem "rails"
 gem "sass-rails"
 
