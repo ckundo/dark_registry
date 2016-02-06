@@ -1,8 +1,10 @@
 source "https://rubygems.org"
 
+gem "devise"
 gem "jquery-rails"
-gem "rails", "4.2.5.1"
-gem "sass-rails", "~> 5.0"
+gem "rails"
+gem "sass-rails"
+gem "sqlite3"
 
 group :development, :test do
   gem "pry-byebug"
