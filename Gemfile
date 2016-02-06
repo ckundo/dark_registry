@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "bitters"
 gem "bourbon", github: "thoughtbot/bourbon", tag: "v4.2.6"
+gem "delayed_job_active_record"
 gem "neat"
 gem "devise"
 gem "jquery-rails"
