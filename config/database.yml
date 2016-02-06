@@ -25,4 +25,4 @@ production:
   database: <%= ENV["PG_DATABASE"]%>
   username: <%= ENV["PG_USER"] %>
   password: <%= ENV["PG_PASS"] %>
-  host: localhost
+  host: /var/run/postgresql

@@ -140,6 +140,3 @@ DEPENDENCIES
   pry-byebug
   rails
   sass-rails
-
-BUNDLED WITH
-   1.11.2
