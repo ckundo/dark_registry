@@ -7,12 +7,12 @@ gem "neat"
 gem "clearance"
 gem "jquery-rails"
 gem "nokogiri"
-gem "pg", "~> 0.15"
+gem "mysql"
 gem "rails"
 gem "sass-rails"
-gem "sqlite3"
 
 group :development, :test do
   gem "pry-byebug"
   gem "refills"
+  gem "sqlite3"
 end

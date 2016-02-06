@@ -5,7 +5,7 @@
 <ol>
   <% @registry.gifts.each do |gift| %>
     <li>
-      <p><%= gift.url %></p>
+      <p><%= link_to gift.url %></p>
       <p><%= gift.description %></p>
     </li>
   <% end %>
