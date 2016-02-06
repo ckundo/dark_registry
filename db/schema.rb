@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160206173618) do
+ActiveRecord::Schema.define(version: 20160206174932) do
+
+  create_table "gifts", force: :cascade do |t|
+    t.text     "url",         null: false
+    t.text     "description"
+    t.text     "image_url"
+    t.integer  "registry_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "registries", force: :cascade do |t|
+    t.string   "title",      null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -26,6 +42,7 @@ ActiveRecord::Schema.define(version: 20160206173618) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "handle"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
