@@ -10,6 +10,7 @@ gem "nokogiri"
 gem "mysql"
 gem "rails"
 gem "sass-rails"
+gem "socksify"
 
 group :development, :test do
   gem "pry-byebug"

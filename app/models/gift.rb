@@ -1,3 +1,4 @@
+require 'socksify/http'
 require "open-uri"
 
 class Gift < ActiveRecord::Base
@@ -9,9 +10,13 @@ class Gift < ActiveRecord::Base
   private
 
   def fetch_description
-    doc = Nokogiri::HTML(open(url))
-    update_attributes(
-      description: doc.css("#info > h3")
-    )
+    uri = URI.parse(url)
+    Net::HTTP.SOCKSProxy('127.0.0.1', 9050).start(uri.host, uri.port) do |http|
+      res = http.get(uri.path)
+      doc = Nokogiri::HTML(res)
+      update_attributes(
+        description: doc.css("#info > h3")
+      )
+    end
   end
 end
