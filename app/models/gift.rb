@@ -12,7 +12,7 @@ class Gift < ActiveRecord::Base
   def fetch_description
     uri = URI.parse(url)
     Net::HTTP.SOCKSProxy('127.0.0.1', 9050).start(uri.host, uri.port) do |http|
-      res = http.get(uri.path)
+      res = http.get(uri.path).body
       doc = Nokogiri::HTML(res)
       update_attributes(
         description: doc.css("#info > h3")
