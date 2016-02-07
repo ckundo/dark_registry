@@ -11,6 +11,7 @@ gem "mysql"
 gem "rails"
 gem "sass-rails"
 gem "socksify"
+gem "uglifier"
 
 group :development, :test do
   gem "pry-byebug"
