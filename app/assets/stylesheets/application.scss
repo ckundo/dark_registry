@@ -9,8 +9,25 @@
 
 .bg-full-bleed {
   height: 300px;
-  background-image: image-url("ring.jpg");
+  background-image: image-url("ring-glitched.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.bg-full-bleed header {
+  text-align: center;
+  display: inline-block;
+}
+
+h1 {
+  font-family: 'Pinyon Script', cursive;
+  color: #000;
 }
