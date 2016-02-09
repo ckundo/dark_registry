@@ -32,13 +32,11 @@ class RegistriesController < ApplicationController
   end
 
   def update
-    redirect_to "https://websiteblocked.files.wordpress.com/2012/07/iprc_seized_2010_11_2011_04.gif"
-
-    # if @registry.update(registry_params)
-    #   redirect_to @registry, notice: 'Registry was successfully updated.'
-    # else
-    #   render :edit
-    # end
+    if @registry.update(registry_params)
+      redirect_to @registry, notice: 'Registry was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   def destroy
